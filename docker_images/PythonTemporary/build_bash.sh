@@ -1,4 +1,4 @@
 #!/bin/bash
-docker build -t friendlyhello .
+sudo docker build -t friendlyhello .
 
-docker images # shows the images
+sudo docker images # shows the images
