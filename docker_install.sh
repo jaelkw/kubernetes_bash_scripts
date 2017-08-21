@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # get root permissions before doing the downloads, so that don't have to be interrupted anymore
-sudo su
-
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get update
 sudo apt-get install \
