@@ -27,6 +27,7 @@ Lightweight process monitor and control system that can be used to keep kubelet 
 Daemon which helps provide cluster-level logging
 
 ** What are nodes? **
+- Not inherently created by Kubernetes, but created externally --> Kubernetes is just creating an object that represents the node.
 - Worker machine (either VM / physical machine)
 - Each node has the services necessary to run pods, including:
   - docker
@@ -39,3 +40,15 @@ Daemon which helps provide cluster-level logging
     - ExternalIP
     - InternalIP
   - conditions: describes status of all Running nodes
+  - capacity: describes resources available - CPU, memory, max no. pods that can be scheduled onto the node
+  - info: general info, including kernel version, kubernetes version, docker version, OS name.
+
+** Components that interact with Kubernetes node interface **
+
+1. Node controller
+- Kubernetes master component which manages various aspects of nodes
+- Multiple roles in a node's life:
+  a. Assignning CIDR block to the node when it is registered, if CIDR assignment is turned on
+  b. keeping node controller's internal list of nodes up to date with the cloud provider's list of available machines.
+      In cloud env, whenever node unhealthy --> ask cloud provider if the VM for that node is still available. If not, node controller deletes the node from its list of nodes.
+  c. Monitoring nodes' health. Checks state of each node every '--node-monitor-period' seconds
