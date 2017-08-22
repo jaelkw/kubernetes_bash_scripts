@@ -10,3 +10,10 @@ curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compos
 ctrl-D to exit root
 
 sudo chmod +x /usr/local/bin/docker-compose
+
+
+Uninstalling docker-compose:
+sudo su
+sudo rm /usr/local/bin/docker-compose
+
+ctrl-D to exit root
