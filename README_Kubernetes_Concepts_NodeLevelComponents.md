@@ -52,3 +52,4 @@ Daemon which helps provide cluster-level logging
   b. keeping node controller's internal list of nodes up to date with the cloud provider's list of available machines.
       In cloud env, whenever node unhealthy --> ask cloud provider if the VM for that node is still available. If not, node controller deletes the node from its list of nodes.
   c. Monitoring nodes' health. Checks state of each node every '--node-monitor-period' seconds
+  
