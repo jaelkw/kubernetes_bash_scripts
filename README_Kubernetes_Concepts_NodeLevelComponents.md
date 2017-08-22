@@ -25,3 +25,17 @@ Lightweight process monitor and control system that can be used to keep kubelet 
 
 5. fluentd
 Daemon which helps provide cluster-level logging
+
+** What are nodes? **
+- Worker machine (either VM / physical machine)
+- Each node has the services necessary to run pods, including:
+  - docker
+  - kubelet
+  - kube-proxy
+- Each node is managed by the master Components
+- Node status contains following info:
+  - Addresses:
+    - Hostname
+    - ExternalIP
+    - InternalIP
+  - conditions: describes status of all Running nodes
