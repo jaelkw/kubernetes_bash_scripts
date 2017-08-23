@@ -10,7 +10,7 @@ $ ./kubernetes_setup.sh
 Step 4: exit root
 ctrl-D
 
-$ kubeadm init
+$ sudo kubeadm init
 ==> take note of the token at the end, so that slave nodes can join the cluster.
 
 $ kubectl get node
