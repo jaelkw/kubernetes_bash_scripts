@@ -27,7 +27,7 @@ Issue 3: Unresolved
 
 Trying to set up worker nodes:
 
-huuve@appserver:~/kubernetes_bash_scripts$ sudo kubeadm join --token 10b232.1ed5c1ca3ae3446e 101.100.225.34:6443
+huuve@appserver:~/kubernetes_bash_scripts$ sudo kubeadm join --token 10b232.1ed5c1ca3ae3446e [IP add]:6443
 [kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.
 [preflight] Running pre-flight checks
 [discovery] Trying to connect to API Server "101.100.225.34:6443"
