@@ -23,7 +23,7 @@ $ rm admin.conf (go look for it)
 then do as above in issue 1, with kubeadm reset , and so on.
 
 
-Issue 3: Unresolved
+Issue 3: Resolved
 
 Trying to set up worker nodes:
 
@@ -35,3 +35,20 @@ huuve@appserver:~/kubernetes_bash_scripts$ sudo kubeadm join --token 10b232.1ed5
 [discovery] Failed to connect to API Server "[IP address]:6443": there is no JWS signed token in the cluster-info ConfigMap. This token id "10b232" is invalid for this cluster, can't connect
 
 Error still persists even when I generate a new token and use that.
+
+Update:
+- Not sure, but it seems weavenet was not set up. To tell whether it's set up, run this:
+$ kubectl get po -n kube-system -o wide
+--> look for the name weave-net-jmklt or something similar.
+
+- if weavenet is not running, run this command to get it going:
+$ kubectl apply -f https://git.io/weave-kube-1.6
+--> run the command above this to see when it starts Running
+
+- obtain accurate tokens by running:
+$ sudo kubeadm token list
+--> join the worker node onto the cluster
+
+- check on master if worker node has joined:
+$ kubectl get nodes
+--> wait for status to become "READY".
