@@ -32,6 +32,6 @@ huuve@appserver:~/kubernetes_bash_scripts$ sudo kubeadm join --token 10b232.1ed5
 [preflight] Running pre-flight checks
 [discovery] Trying to connect to API Server "101.100.225.34:6443"
 [discovery] Created cluster-info discovery client, requesting info from "https://101.100.225.34:6443"
-[discovery] Failed to connect to API Server "101.100.225.34:6443": there is no JWS signed token in the cluster-info ConfigMap. This token id "10b232" is invalid for this cluster, can't connect
+[discovery] Failed to connect to API Server "[IP address]:6443": there is no JWS signed token in the cluster-info ConfigMap. This token id "10b232" is invalid for this cluster, can't connect
 
 Error still persists even when I generate a new token and use that.
