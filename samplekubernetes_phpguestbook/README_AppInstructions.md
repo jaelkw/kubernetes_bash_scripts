@@ -7,6 +7,8 @@ Pre-check - Ensure you've the following files:
 5. frontend-deployment.yaml
 6. frontend-service.yaml
 
+Source: https://kubernetes.io/docs/tutorials/stateless-application/guestbook/
+
 Create Redis Master Deployment
 $ kubectl apply -f redis-master-deployment.yaml
 $ kubectl get pods  
@@ -34,5 +36,20 @@ $ kubectl get pods -l app=guestbook -l tier=frontend
 Create Frontend Service
 $ kubectl apply -f frontend-service.yaml
 
+Scaling the Deployments
+- Scale Up
+$ kubectl scale deployment frontend --replicas=5
+
+- Scale Down
+$ kubectl scale deployment frontend --replicas=2
+
+
 To delete a service:
 $ kubectl delete services [service name]
+
+
+Deleting Deployments & Services:
+$ kubectl delete deployment -l app=redis
+$ kubectl delete service -l app=redis
+$ kubectl delete deployment -l app=guestbook
+$ kubectl delete service -l app=guestbook
