@@ -1,4 +1,4 @@
-Issue 1: Resolved
+**Issue 1: Resolved**
 
 Node forever in NotReady State
 
@@ -13,7 +13,7 @@ $ systemctl restart kubelet.service
 
 $ sudo kubeadm init
 
-Issue 2: Resolved
+**Issue 2: Resolved**
 
 How to reset Kuberneates
 
